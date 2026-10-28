@@ -8,99 +8,134 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
 <style>
-/* Bracket homepage, option B: Friendly and bright */
+/* Bracket homepage, option B2: Refund first */
+html,body{margin:0}
 :root{
-  --b-bg:#FFFFFF; --b-sky:#EAF3FC; --b-sky2:#D8E9FA; --b-fg:#1B2B44; --b-muted:#5A6B82; --b-line:#E3EAF3; --b-accent:#2F6FD0; --b-accent-ink:#FFFFFF; --b-peach:#FFE3D3; --b-mint:#DDF3E8; --b-lilac:#ECE6FB;
-  --serif:"Instrument Serif", Georgia, serif;
-  --figtree:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --nunito:"Nunito", "Figtree", system-ui, sans-serif;
-  --grotesk:"Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --bg:#FFFFFF; --sky:#EAF3FC; --sky2:#D8E9FA; --fg:#1B2B44; --muted:#5A6B82; --line:#E3EAF3;
+  --accent:#2F6FD0; --accent-ink:#FFFFFF; --peach:#FFE3D3; --mint:#DDF3E8; --lilac:#ECE6FB;
+  --good:#1E8A5A; --peach-ink:#9A4A1F; --mint-ink:#1E6B49; --lilac-ink:#5B3FA8;
+  --font:"Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
   color-scheme:light;
 }
-html,body{margin:0}
 *{box-sizing:border-box}
-body{background:var(--b-bg);font-family:var(--figtree);line-height:1.6}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--b-sky)}
-p{margin:0} h1,h2,h3{margin:0;text-wrap:balance}
-ul{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--sky)}
+p{margin:0} h1,h2,h3{margin:0;text-wrap:balance} ul,ol{margin:0;padding:0}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 @media (max-width:480px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
 .num{font-variant-numeric:tabular-nums}
-:focus-visible{outline:3px solid #8FB3E8;outline-offset:3px;border-radius:6px}
-.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.vb{background:var(--b-bg);color:var(--b-fg);font-family:var(--nunito);font-size:17px;line-height:1.65}
-.vb h1,.vb h2{font-family:var(--nunito);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+:focus-visible{outline:3px solid #8FB3E8;outline-offset:3px;border-radius:8px}
+.vb{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.65}
+.vb h1,.vb h2{font-weight:800;letter-spacing:-.02em;line-height:1.12}
 .vb h1{font-size:clamp(2.4rem,5.6vw,3.9rem)} .vb h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
-.vb h3{font-weight:700;font-size:1.15rem}
-.vb .hl{color:var(--b-accent)}
-.vb .top{background:var(--b-sky)}
+.vb h3{font-weight:800;font-size:1.18rem;line-height:1.3}
+.vb .hl{color:var(--accent)}
+.vb .top{background:var(--sky)}
 .vb .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px}
 .vb .brand{font-weight:800;font-size:1.45rem;display:flex;gap:10px;align-items:center}
-.vb .dot{width:30px;height:30px;border-radius:10px;background:var(--b-accent);display:grid;place-items:center;color:#fff;font-weight:800;font-size:1rem}
+.vb .dot{width:30px;height:30px;border-radius:10px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800;font-size:1rem}
 .vb .links{display:flex;gap:6px;align-items:center}
-.vb .links span{color:var(--b-muted);padding:8px 12px;font-weight:600}
-.vb .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:15px 26px;font-weight:700;text-decoration:none;background:var(--b-accent);color:var(--b-accent-ink);box-shadow:0 8px 20px -10px rgba(47,111,208,.6)}
-.vb .btn.white{background:#fff;color:var(--b-accent);box-shadow:none}
-.vb .hero{position:relative;overflow:hidden;background:var(--b-sky);padding-block:56px 120px;text-align:center}
-.vb .hero::before,.vb .hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.vb .hero::before{width:420px;height:420px;background:var(--b-sky2);left:-160px;bottom:-200px}
-.vb .hero::after{width:300px;height:300px;background:var(--b-peach);right:-90px;top:-120px;opacity:.7}
-.vb .hero .wrap{position:relative;display:grid;gap:24px;justify-items:center}
-.vb .lede{font-size:1.2rem;color:var(--b-muted);max-width:54ch}
-.vb .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.vb .trust{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center;color:var(--b-muted);font-weight:600;font-size:.98rem}
-.vb .trust span::before{content:"✓ ";color:var(--b-accent)}
-.vb .lift{margin-top:-72px;position:relative}
-.vb .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.vb .step{background:#fff;border-radius:22px;padding:30px;box-shadow:0 20px 44px -26px rgba(27,43,68,.35);display:grid;gap:12px;align-content:start}
-.vb .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-weight:800;font-size:1.25rem;color:var(--b-fg)}
-.vb .step p{color:var(--b-muted)}
+.vb .links a:not(.btn){color:var(--muted);padding:8px 12px;font-weight:700;text-decoration:none}
+.vb .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:15px 26px;font-weight:800;text-decoration:none;background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 20px -10px rgba(47,111,208,.6);border:0;font-family:inherit;font-size:1rem;cursor:pointer}
+.vb .btn.sm{padding:11px 20px}
+.vb .btn.white{background:#fff;color:var(--accent);box-shadow:none}
+.vb .lede{font-size:1.2rem;color:var(--muted);max-width:54ch}
+.vb .cta{display:flex;gap:12px;flex-wrap:wrap}
 .vb .sec{padding-block:96px;display:grid;gap:44px}
 .vb .center{text-align:center;justify-items:center}
-.vb .stack{display:grid;gap:18px}
+.vb .center .lede{margin-inline:auto}
+.vb .stack{display:grid;gap:18px;align-content:start}
+.vb .kicker{font-weight:800;color:var(--accent);font-size:.98rem}
+.vb .ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;flex:none}
+.vb .ico svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vb .i-peach{background:var(--peach);color:var(--peach-ink)} .vb .i-mint{background:var(--mint);color:var(--mint-ink)} .vb .i-lilac{background:var(--lilac);color:var(--lilac-ink)} .vb .i-sky{background:var(--sky);color:var(--accent)}
+.vb .card{background:#fff;border-radius:24px;padding:30px;box-shadow:0 20px 44px -26px rgba(27,43,68,.35);display:grid;gap:14px;align-content:start}
+.vb .card p{color:var(--muted)}
 .vb .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.vb .tier{border:2px solid var(--b-line);border-radius:20px;padding:26px 22px;display:grid;gap:10px;align-content:start;text-align:left}
-.vb .tier.f{border-color:var(--b-accent);background:var(--b-sky)}
-.vb .tier .p{font-weight:800;font-size:2.2rem;line-height:1}
-.vb .tier p{color:var(--b-muted);font-size:.96rem}
-.vb .who{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:860px}
-.vb .who span{border-radius:999px;padding:10px 18px;font-weight:600}
-.vb .consult{background:var(--b-lilac);border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.vb .tier{border:2px solid var(--line);border-radius:20px;padding:26px 22px;display:grid;gap:10px;align-content:start}
+.vb .tier.f{border-color:var(--accent);background:var(--sky)}
+.vb .tier .p{font-weight:800;font-size:2.3rem;line-height:1}
+.vb .tier p{color:var(--muted);font-size:.96rem}
+.vb .chips{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:center;color:var(--muted);font-weight:700;font-size:.98rem}
+.vb .chips span::before{content:"✓ ";color:var(--good)}
+.vb .consult{background:var(--lilac);border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
 .vb .consult>*{min-width:0}
 .vb .prices{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .vb .prices div{background:#fff;border-radius:18px;padding:22px;display:grid;gap:2px}
 .vb .prices b{font-size:2rem;font-weight:800}
-.vb .prices span{color:var(--b-muted);font-size:.95rem}
-.vb .foot{background:var(--b-sky);padding-block:44px;color:var(--b-muted);font-size:.95rem}
-@media (max-width:900px){.vb .tiers{grid-template-columns:repeat(2,1fr)}.vb .consult{grid-template-columns:1fr;padding:36px 26px}.vb .links span{display:none}}
-@media (max-width:720px){.vb .steps{grid-template-columns:1fr}}
-@media (max-width:480px){.vb .tiers{grid-template-columns:1fr}}
+.vb .prices span{color:var(--muted);font-size:.95rem}
+.vb .fine{font-size:.88rem;color:var(--muted)}
+.vb .foot{background:var(--sky);padding-block:44px;color:var(--muted);font-size:.95rem}
+.vb .foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.vb .foot .wrap.note{display:block;margin-top:18px;font-size:.85rem}
+@media (max-width:900px){.vb .tiers{grid-template-columns:repeat(2,1fr)}.vb .consult{grid-template-columns:1fr;padding:36px 26px}.vb .links a:not(.btn){display:none}}
+@media (max-width:480px){.vb .tiers{grid-template-columns:1fr}.vb .prices{grid-template-columns:1fr}}
+.v2 .hero{position:relative;overflow:hidden;background:var(--sky);padding-block:56px 96px}
+.v2 .hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:var(--mint);right:-200px;bottom:-260px;opacity:.8;pointer-events:none}
+.v2 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.v2 .hero .wrap>*{min-width:0}
+.v2 .badge{justify-self:start;display:inline-flex;gap:8px;align-items:center;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;color:var(--good);font-size:.95rem}
+.v2 .tracker{background:#fff;border-radius:26px;padding:28px;box-shadow:0 24px 50px -26px rgba(27,43,68,.4);display:grid;gap:20px}
+.v2 .tracker header{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.v2 .tracker header span{font-size:.85rem;color:var(--muted);background:var(--sky);border-radius:999px;padding:4px 10px;font-weight:700}
+.v2 .tl{list-style:none;display:grid;gap:0}
+.v2 .tl li{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding-bottom:16px;position:relative}
+.v2 .tl li::before{content:"✓";width:26px;height:26px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:grid;place-items:center;font-weight:800;font-size:.8rem;position:relative;z-index:1}
+.v2 .tl li:not(:last-child)::after{content:"";position:absolute;left:12px;top:26px;bottom:0;width:2px;background:var(--mint)}
+.v2 .tl b{display:block;font-weight:800}
+.v2 .tl small{color:var(--muted);font-size:.88rem}
+.v2 .tl .d{color:var(--muted);font-size:.88rem;font-weight:700;white-space:nowrap}
+.v2 .tl li.money::before{content:"$";background:var(--good);color:#fff}
+.v2 .refund{display:flex;justify-content:space-between;align-items:center;background:var(--mint);border-radius:16px;padding:16px 18px;gap:12px}
+.v2 .refund b{font-size:1.9rem;font-weight:800;color:var(--mint-ink)}
+.v2 .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.v2 .strip>div{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
+.v2 .strip p{color:var(--muted);font-size:.98rem}
+.v2 .creds{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.v2 .creds>*{min-width:0}
+.v2 .credlist{display:grid;gap:14px}
+.v2 .credlist div{background:var(--sky);border-radius:18px;padding:20px 22px;display:grid;gap:4px}
+.v2 .credlist p{color:var(--muted);font-size:.96rem}
+@media (max-width:900px){.v2 .hero .wrap,.v2 .creds{grid-template-columns:1fr;gap:44px}.v2 .strip{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="vb" data-v="b">
+<div class="vb v2" data-v="2">
   <div class="top"><div class="wrap nav">
     <div class="brand"><span class="dot" aria-hidden="true">B</span>Bracket</div>
-    <div class="links"><span>How it works</span><span>Pricing</span><span>Consultations</span><span>FAQ</span><a class="btn" href="#" style="padding:11px 20px">Get a quote</a></div>
+    <div class="links"><a href="#">How it works</a><a href="#">Pricing</a><a href="#">Consultations</a><a href="#">FAQ</a><a class="btn sm" href="#">Get a quote</a></div>
   </div></div>
   <div class="hero">
     <div class="wrap">
-      <h1>Taxes with a real person, <span class="hl">and a price that never surprises you.</span></h1>
-      <p class="lede">A CPA or Enrolled Agent prepares and signs your return. Pick from four fixed prices, from $750 to $1,500, and know yours before we start.</p>
-      <div class="cta"><a class="btn" href="#">See my price</a><a class="btn white" href="#">How it works</a></div>
-      <div class="trust"><span>Prepared by a CPA or EA</span><span>No hourly billing</span><span>Pay after you review</span></div>
-    </div>
-  </div>
-  <div class="wrap lift">
-    <div class="steps">
-      <div class="step"><div class="ico" style="background:var(--b-peach)">1</div><h3>Tell us about your year</h3><p>A 15-minute questionnaire that skips anything that doesn't apply.</p></div>
-      <div class="step"><div class="ico" style="background:var(--b-mint)">2</div><h3>Upload your documents</h3><p>Phone photos or PDFs into your secure portal. We'll tell you what's missing.</p></div>
-      <div class="step"><div class="ico" style="background:var(--b-lilac)">3</div><h3>Review and sign</h3><p>Your preparer walks you through it, then we e-file federal and state.</p></div>
+      <div class="stack" style="gap:24px">
+        <span class="badge">✓ 5-day filing guarantee</span>
+        <h1>Your refund, <span class="hl">on its way within days.</span></h1>
+        <p class="lede">Send us your documents and a CPA or Enrolled Agent files your return within 5 business days, guaranteed. One fixed price, set before we start.</p>
+        <div class="cta"><a class="btn" href="#">Start my return</a><a class="btn white" href="#">See prices</a></div>
+      </div>
+      <div class="tracker" aria-label="Example of a return from documents to refund">
+        <header><h3>The Rivera family return</h3><span>Example</span></header>
+        <ol class="tl">
+          <li><span><b>Documents complete</b><small>W-2s, 1098, childcare receipts</small></span><span class="d">Mon, Feb 8</span></li>
+          <li><span><b>Prepared and signed</b><small>By their Enrolled Agent</small></span><span class="d">Wed, Feb 10</span></li>
+          <li><span><b>E-filed, 4 days in</b><small>Guarantee met</small></span><span class="d">Fri, Feb 12</span></li>
+          <li class="money"><span><b>Refund deposited</b><small>Federal, direct deposit</small></span><span class="d">Tue, Feb 23</span></li>
+        </ol>
+        <div class="refund"><span>Their refund</span><b class="num">$3,412</b></div>
+        <p class="fine">Fixed fee: Essential, $750. Refund timing is set by the IRS.</p>
+      </div>
     </div>
   </div>
   <div class="wrap">
     <div class="sec">
-      <div class="stack center"><h2>Four simple prices</h2><p class="lede">Your price depends on what's on your return. That's it.</p></div>
+      <div class="strip">
+        <div><div class="ico i-mint"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg></div><div class="stack" style="gap:4px"><h3>Fast, guaranteed</h3><p>Filed within 5 business days of complete documents, or $100 off your fee.</p></div></div>
+        <div><div class="ico i-peach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></svg></div><div class="stack" style="gap:4px"><h3>Fixed fee</h3><p>One price from $750 to $1,500, known up front. Pay after you review.</p></div></div>
+        <div><div class="ico i-lilac"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div><div class="stack" style="gap:4px"><h3>Credentialed preparer</h3><p>A CPA or Enrolled Agent prepares and signs every return.</p></div></div>
+      </div>
+    </div>
+    <div class="sec" style="padding-top:0">
+      <div class="stack center"><span class="kicker">Fixed fees</span><h2>Know your price before we start</h2></div>
       <div class="tiers">
         <div class="tier"><h3>Essential</h3><span class="p num">$750</span><p>Wages, retirement income, investments, a home and the usual credits.</p></div>
         <div class="tier"><h3>Plus</h3><span class="p num">$1,000</span><p>Bigger portfolios, partnership income or two states.</p></div>
@@ -109,10 +144,14 @@ ul{margin:0;padding:0}
       </div>
     </div>
     <div class="sec" style="padding-top:0">
-      <div class="stack center"><h2>Made for every kind of year</h2></div>
-      <div class="stack center"><div class="who">
-        <span style="background:var(--b-sky)">First-time filers</span><span style="background:var(--b-peach)">Growing families</span><span style="background:var(--b-mint)">Homeowners</span><span style="background:var(--b-lilac)">Retirees</span><span style="background:var(--b-mint)">Freelancers</span><span style="background:var(--b-sky)">Landlords</span><span style="background:var(--b-lilac)">Investors</span><span style="background:var(--b-peach)">Big life changes</span>
-      </div></div>
+      <div class="creds">
+        <div class="stack"><span class="kicker">Credentialed preparers</span><h2>A real tax professional signs your return</h2><p class="lede">Not a seasonal clerk or a software wizard. Every Bracket return is prepared by someone licensed to represent you before the IRS.</p></div>
+        <div class="credlist">
+          <div><h3>Certified Public Accountants</h3><p>Licensed by their state board after passing the CPA exam.</p></div>
+          <div><h3>IRS Enrolled Agents</h3><p>Licensed by the IRS itself after a three-part exam on federal tax.</p></div>
+          <div><h3>Help after you file</h3><p>Get an IRS or state letter? Your preparer reviews it and drafts the reply.</p></div>
+        </div>
+      </div>
     </div>
     <div class="sec" style="padding-top:0">
       <div class="consult">
@@ -121,7 +160,7 @@ ul{margin:0;padding:0}
       </div>
     </div>
   </div>
-  <div class="foot"><div class="wrap"><span>Bracket · Fixed-fee personal tax preparation</span><span>How it works · Pricing · Consultations · FAQ</span></div></div>
+  <div class="foot"><div class="wrap"><span>Bracket · Fixed-fee personal tax preparation</span><span>How it works · Pricing · Consultations · FAQ</span></div><div class="wrap note">Guarantee applies once all documents are received. Refund timing is set by the IRS and state tax agencies.</div></div>
 </div>
 </body>
 </html>
